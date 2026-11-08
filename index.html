@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mollen — Pure Washed European Flax Linen & Bedding</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    .font-serif { font-family: 'Playfair Display', serif; }
+  </style>
+</head>
+<body class="bg-[#F8F5F0] text-[#292622] antialiased selection:bg-[#7D6B58] selection:text-white">
+
+  <div class="bg-[#ECE7DF] py-2 text-center text-xs font-medium text-[#655A4E] border-b border-[#DFD8CC]">
+    OEKO-TEX® 100 Certified French Flax • Pre-washed for supreme softness
+  </div>
+
+  <header class="sticky top-0 z-40 bg-[#F8F5F0]/90 backdrop-blur-md border-b border-[#E8E2D6]">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <span class="font-serif text-2xl font-bold tracking-widest uppercase">M O L L E N</span>
+      <nav class="hidden md:flex items-center gap-8 text-xs uppercase tracking-widest text-[#756B5F]">
+        <a href="#visualizer" class="hover:text-black transition">Room Visualizer</a>
+        <a href="#bedding" class="hover:text-black transition">Linen Bedding</a>
+        <a href="#swatches" class="hover:text-black transition">Free Swatches</a>
+      </nav>
+      <button onclick="alert('Bag contains 0 items.')" class="px-5 py-2 rounded-full border border-[#292622] text-xs font-semibold uppercase tracking-wider hover:bg-[#292622] hover:text-white transition">
+        Bag (0)
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="py-20 max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
+    <div class="space-y-6">
+      <span class="text-xs uppercase font-serif tracking-[0.2em] text-[#8C765E]">100% Normandy Linen</span>
+      <h1 class="font-serif text-5xl sm:text-6xl font-light leading-tight">
+        The restorative ease of lived-in linen.
+      </h1>
+      <p class="text-[#756B5F] text-sm leading-relaxed max-w-md">
+        Naturally thermoregulating, antibacterial, and softer with every wash cycle. Designed to turn your bedroom into a quiet restorative sanctuary.
+      </p>
+      <div class="flex gap-4 pt-2">
+        <a href="#visualizer" class="px-7 py-3.5 bg-[#292622] text-white text-xs font-semibold uppercase tracking-widest transition">Launch Bed Visualizer</a>
+        <a href="#swatches" class="px-7 py-3.5 border border-[#B0A596] text-xs uppercase tracking-widest transition">Order Free Swatches</a>
+      </div>
+    </div>
+    <div class="rounded-3xl overflow-hidden shadow-2xl border border-[#E5DFD3]">
+      <img src="https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=1000&q=80" alt="Linen Bedding" class="w-full h-[480px] object-cover">
+    </div>
+  </section>
+
+  <!-- Interactive Bedding Visualizer -->
+  <section id="visualizer" class="py-24 bg-[#EFEBE4] border-y border-[#DDD6C9]">
+    <div class="max-w-4xl mx-auto px-6 text-center space-y-10">
+      <div>
+        <span class="text-xs font-serif uppercase tracking-[0.2em] text-[#8C765E]">Studio Interactive</span>
+        <h2 class="font-serif text-3xl sm:text-4xl">Colorway Bedding Visualizer</h2>
+        <p class="text-xs text-[#756B5F] mt-1">Select your sheet colorway to preview palette harmony.</p>
+      </div>
+
+      <div class="p-8 rounded-3xl bg-[#F8F5F0] border border-[#DDD6C9] shadow-lg space-y-8">
+        <div id="bedCanvas" class="w-full h-72 rounded-2xl flex items-center justify-center transition-colors duration-500 bg-[#E2DBD1] shadow-inner">
+          <div class="text-center space-y-2">
+            <i data-lucide="sparkles" class="w-6 h-6 mx-auto text-[#7D6B58]"></i>
+            <h4 class="font-serif text-2xl font-bold" id="colorName">Warm Oat & Natural Sand</h4>
+            <span class="text-xs text-[#756B5F]" id="colorTone">Warm neutral tones inspired by autumn dunes</span>
+          </div>
+        </div>
+
+        <div class="flex justify-center gap-4">
+          <button onclick="setBedColor('oat', '#E2DBD1', 'Warm Oat & Natural Sand', 'Warm neutral tones inspired by autumn dunes')" class="w-12 h-12 rounded-full border-2 border-black bg-[#E2DBD1] shadow-md hover:scale-110 transition"></button>
+          <button onclick="setBedColor('terracotta', '#C48A73', 'Tuscan Terracotta', 'Sun-baked Mediterranean clay palette')" class="w-12 h-12 rounded-full border-2 border-transparent hover:border-black bg-[#C48A73] shadow-md hover:scale-110 transition"></button>
+          <button onclick="setBedColor('sage', '#A3B19B', 'Wild Olive Sage', 'Calm botanic green harvested in Southern France')" class="w-12 h-12 rounded-full border-2 border-transparent hover:border-black bg-[#A3B19B] shadow-md hover:scale-110 transition"></button>
+          <button onclick="setBedColor('charcoal', '#4A4845', 'Midnight Slate Linen', 'Moody deep stone wash for high contrast interiors')" class="w-12 h-12 rounded-full border-2 border-transparent hover:border-black bg-[#4A4845] shadow-md hover:scale-110 transition"></button>
+        </div>
+
+        <button onclick="alert('Custom linen bundle saved to your order!')" class="px-8 py-3.5 bg-[#292622] text-white font-semibold text-xs uppercase tracking-widest rounded-xl transition">
+          Order This Colorway Duvet Set ($245)
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products -->
+  <section id="bedding" class="py-24 max-w-7xl mx-auto px-6">
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="space-y-4">
+        <div class="h-80 rounded-2xl overflow-hidden bg-[#ECE7DF]">
+          <img src="https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=600&q=80" alt="Duvet" class="w-full h-full object-cover">
+        </div>
+        <div class="flex justify-between items-baseline font-serif">
+          <h3 class="text-lg">Classic French Linen Duvet</h3>
+          <span>$245</span>
+        </div>
+        <p class="text-xs text-[#756B5F]">Includes duvet cover and two envelope pillowcases.</p>
+      </div>
+
+      <div class="space-y-4">
+        <div class="h-80 rounded-2xl overflow-hidden bg-[#ECE7DF]">
+          <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=600&q=80" alt="Throw" class="w-full h-full object-cover">
+        </div>
+        <div class="flex justify-between items-baseline font-serif">
+          <h3 class="text-lg">Waffle Weave Linen Throw</h3>
+          <span>$125</span>
+        </div>
+        <p class="text-xs text-[#756B5F]">Textured breathable accent blanket for sofas and beds.</p>
+      </div>
+
+      <div class="space-y-4">
+        <div class="h-80 rounded-2xl overflow-hidden bg-[#ECE7DF]">
+          <img src="https://images.unsplash.com/photo-1616046229478-9901c5536a45?auto=format&fit=crop&w=600&q=80" alt="Robe" class="w-full h-full object-cover">
+        </div>
+        <div class="flex justify-between items-baseline font-serif">
+          <h3 class="text-lg">Kimono Linen Robe</h3>
+          <span>$140</span>
+        </div>
+        <p class="text-xs text-[#756B5F]">Relaxed unisex lounging robe with deep waist pockets.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="border-t border-[#E8E2D6] py-12 text-center text-xs text-[#948879]">
+    <p>© 2026 Mollen Home Textiles. Sourced ethically in Normandy and Portugal.</p>
+  </footer>
+
+  <script>
+    lucide.createIcons();
+
+    function setBedColor(key, hex, name, tone) {
+      const canvas = document.getElementById('bedCanvas');
+      canvas.style.backgroundColor = hex;
+      document.getElementById('colorName').textContent = name;
+      document.getElementById('colorTone').textContent = tone;
+
+      if (key === 'charcoal') {
+        canvas.classList.add('text-white');
+      } else {
+        canvas.classList.remove('text-white');
+      }
+    }
+  </script>
+</body>
+</html>
